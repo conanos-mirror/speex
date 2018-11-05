@@ -16,8 +16,6 @@ class SpeexConan(ConanFile):
     requires = "libogg/1.3.3@conanos/dev"
     source_subfolder = "source_subfolder"
 
-    download_url = 'http://downloads.xiph.org/releases/speex/speex-1.2rc2.tar.gz'
-
     def source(self):
         tools.get("http://downloads.xiph.org/releases/speex/{name}-{version}.tar.gz".format(name=self.name, version=self.version))
         extracted_dir = "{name}-{version}".format(name=self.name, version=self.version)
