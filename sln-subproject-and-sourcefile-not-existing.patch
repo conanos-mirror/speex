@@ -1,0 +1,48 @@
+diff -Nur speex-1.2.0/win32/VS2008/libspeex/libspeex.vcproj speex-1.2.0-msbuild/win32/VS2008/libspeex/libspeex.vcproj
+--- speex-1.2.0/win32/VS2008/libspeex/libspeex.vcproj	2015-07-06 08:02:13.000000000 -0700
++++ speex-1.2.0-msbuild/win32/VS2008/libspeex/libspeex.vcproj	2018-12-06 00:33:57.159240754 -0800
+@@ -1434,10 +1434,6 @@
+ 				>
+ 			</File>
+ 			<File
+-				RelativePath="..\..\..\libspeex\fftwrap.c"
+-				>
+-			</File>
+-			<File
+ 				RelativePath="..\..\..\libspeex\filters.c"
+ 				>
+ 			</File>
+diff -Nur speex-1.2.0/win32/VS2008/libspeex.sln speex-1.2.0-msbuild/win32/VS2008/libspeex.sln
+--- speex-1.2.0/win32/VS2008/libspeex.sln	2015-07-06 08:02:13.000000000 -0700
++++ speex-1.2.0-msbuild/win32/VS2008/libspeex.sln	2018-12-05 23:17:22.487671260 -0800
+@@ -13,16 +13,6 @@
+ 		{03207781-0D1C-4DB3-A71D-45C608F28DBD} = {03207781-0D1C-4DB3-A71D-45C608F28DBD}
+ 	EndProjectSection
+ EndProject
+-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testdenoise", "tests\testdenoise.vcproj", "{961B8359-1393-4EF7-B8E0-67B6FE1C6DA9}"
+-	ProjectSection(ProjectDependencies) = postProject
+-		{03207781-0D1C-4DB3-A71D-45C608F28DBD} = {03207781-0D1C-4DB3-A71D-45C608F28DBD}
+-	EndProjectSection
+-EndProject
+-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testecho", "tests\testecho.vcproj", "{961B8359-1393-4EF7-B8E0-67B6FE1C6DAA}"
+-	ProjectSection(ProjectDependencies) = postProject
+-		{03207781-0D1C-4DB3-A71D-45C608F28DBD} = {03207781-0D1C-4DB3-A71D-45C608F28DBD}
+-	EndProjectSection
+-EndProject
+ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testenc", "tests\testenc.vcproj", "{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}"
+ 	ProjectSection(ProjectDependencies) = postProject
+ 		{E972C52F-9E85-4D65-B19C-031E511E9DB4} = {E972C52F-9E85-4D65-B19C-031E511E9DB4}
+@@ -38,13 +28,6 @@
+ 		{E972C52F-9E85-4D65-B19C-031E511E9DB4} = {E972C52F-9E85-4D65-B19C-031E511E9DB4}
+ 	EndProjectSection
+ EndProject
+-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testresample", "tests\testresample.vcproj", "{961B8359-1393-4EF7-B8E0-67B6FE1C6DAB}"
+-	ProjectSection(ProjectDependencies) = postProject
+-		{03207781-0D1C-4DB3-A71D-45C608F28DBD} = {03207781-0D1C-4DB3-A71D-45C608F28DBD}
+-	EndProjectSection
+-EndProject
+-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libspeexdsp", "libspeexdsp\libspeexdsp.vcproj", "{03207781-0D1C-4DB3-A71D-45C608F28DBD}"
+-EndProject
+ Global
+ 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+ 		Debug_RTL_dll|Win32 = Debug_RTL_dll|Win32
