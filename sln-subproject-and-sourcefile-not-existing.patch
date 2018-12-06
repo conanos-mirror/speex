@@ -1,6 +1,6 @@
 diff -Nur speex-1.2.0/win32/VS2008/libspeex/libspeex.vcproj speex-1.2.0-msbuild/win32/VS2008/libspeex/libspeex.vcproj
 --- speex-1.2.0/win32/VS2008/libspeex/libspeex.vcproj	2015-07-06 08:02:13.000000000 -0700
-+++ speex-1.2.0-msbuild/win32/VS2008/libspeex/libspeex.vcproj	2018-12-06 03:28:42.083049246 -0800
++++ speex-1.2.0-msbuild/win32/VS2008/libspeex/libspeex.vcproj	2018-12-06 05:27:44.644245706 -0800
 @@ -13,6 +13,9 @@
  			Name="Win32"
  		/>
@@ -174,7 +174,7 @@ diff -Nur speex-1.2.0/win32/VS2008/libspeex/libspeex.vcproj speex-1.2.0-msbuild/
  			</File>
 diff -Nur speex-1.2.0/win32/VS2008/libspeex.sln speex-1.2.0-msbuild/win32/VS2008/libspeex.sln
 --- speex-1.2.0/win32/VS2008/libspeex.sln	2015-07-06 08:02:13.000000000 -0700
-+++ speex-1.2.0-msbuild/win32/VS2008/libspeex.sln	2018-12-06 03:45:12.920991559 -0800
++++ speex-1.2.0-msbuild/win32/VS2008/libspeex.sln	2018-12-06 06:03:26.073580940 -0800
 @@ -10,17 +10,6 @@
  Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "speexenc", "speexenc\speexenc.vcproj", "{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}"
  	ProjectSection(ProjectDependencies) = postProject
@@ -259,19 +259,23 @@ diff -Nur speex-1.2.0/win32/VS2008/libspeex.sln speex-1.2.0-msbuild/win32/VS2008
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DA8}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DA8}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Build.0 = Release|Win32
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Debug_RTL_dll|Win32.ActiveCfg = Debug|Win32
-@@ -166,6 +158,7 @@
+@@ -166,6 +158,9 @@
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Debug_WM5_PPC_ARM|Win32.Build.0 = Debug|Win32
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Debug_WM5_PPC_ARM|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Debug|Win32.ActiveCfg = Debug|Win32
++		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Debug|Win32.Build.0 = Debug|Win32
 +		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Debug|x64.ActiveCfg = Debug|x64
++		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Debug|x64.Build.0 = Debug|x64
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Release_Dynamic_SSE|Win32.ActiveCfg = Release_SSE2|Win32
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Release_Dynamic_SSE|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release_SSE2|Win32
-@@ -187,81 +180,8 @@
+@@ -187,81 +182,10 @@
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Release_WM5_PPC_ARM|Win32.Build.0 = Release_SSE2|Win32
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Release_WM5_PPC_ARM|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release_SSE2|Win32
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Release|Win32.ActiveCfg = Release|Win32
++		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Release|Win32.Build.0 = Debug|Win32
 +		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Release|x64.ActiveCfg = Release|x64
++		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Release|x64.Build.0 = Debug|x64
  		{CD6043D1-D5E7-46D0-854F-00BB1BC308FC}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Win32
 -		{961B8359-1393-4EF7-B8E0-67B6FE1C6DA9}.Debug_RTL_dll|Win32.ActiveCfg = Debug|Win32
 -		{961B8359-1393-4EF7-B8E0-67B6FE1C6DA9}.Debug_RTL_dll|Win32.Build.0 = Debug|Win32
@@ -350,7 +354,7 @@ diff -Nur speex-1.2.0/win32/VS2008/libspeex.sln speex-1.2.0-msbuild/win32/VS2008
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Debug_RTL_dll|Win32.ActiveCfg = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Debug_RTL_dll|Win32.Build.0 = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Debug_RTL_dll|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
-@@ -270,6 +190,8 @@
+@@ -270,6 +194,8 @@
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Debug_WM5_PPC_ARM|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Debug|Win32.ActiveCfg = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Debug|Win32.Build.0 = Debug|Win32
@@ -359,7 +363,7 @@ diff -Nur speex-1.2.0/win32/VS2008/libspeex.sln speex-1.2.0-msbuild/win32/VS2008
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Build.0 = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Release_Dynamic_SSE|Win32.ActiveCfg = Release_SSE|Win32
-@@ -297,6 +219,8 @@
+@@ -297,6 +223,8 @@
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Release_WM5_PPC_ARM|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release_SSE|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Release|Win32.ActiveCfg = Release|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Release|Win32.Build.0 = Release|Win32
@@ -368,7 +372,7 @@ diff -Nur speex-1.2.0/win32/VS2008/libspeex.sln speex-1.2.0-msbuild/win32/VS2008
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAE}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Build.0 = Release|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Debug_RTL_dll|Win32.ActiveCfg = Debug|Win32
-@@ -307,6 +231,8 @@
+@@ -307,6 +235,8 @@
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Debug_WM5_PPC_ARM|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Debug|Win32.ActiveCfg = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Debug|Win32.Build.0 = Debug|Win32
@@ -377,7 +381,7 @@ diff -Nur speex-1.2.0/win32/VS2008/libspeex.sln speex-1.2.0-msbuild/win32/VS2008
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Build.0 = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Release_Dynamic_SSE|Win32.ActiveCfg = Release_SSE|Win32
-@@ -334,6 +260,8 @@
+@@ -334,6 +264,8 @@
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Release_WM5_PPC_ARM|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release_SSE|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Release|Win32.ActiveCfg = Release|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Release|Win32.Build.0 = Release|Win32
@@ -386,7 +390,7 @@ diff -Nur speex-1.2.0/win32/VS2008/libspeex.sln speex-1.2.0-msbuild/win32/VS2008
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAC}.Release|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Build.0 = Release|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAD}.Debug_RTL_dll|Win32.ActiveCfg = Debug|Win32
-@@ -344,6 +272,8 @@
+@@ -344,6 +276,8 @@
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAD}.Debug_WM5_PPC_ARM|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAD}.Debug|Win32.ActiveCfg = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAD}.Debug|Win32.Build.0 = Debug|Win32
@@ -395,7 +399,7 @@ diff -Nur speex-1.2.0/win32/VS2008/libspeex.sln speex-1.2.0-msbuild/win32/VS2008
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAD}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAD}.Debug|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).Build.0 = Debug|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAD}.Release_Dynamic_SSE|Win32.ActiveCfg = Release_SSE|Win32
-@@ -371,67 +301,10 @@
+@@ -371,67 +305,10 @@
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAD}.Release_WM5_PPC_ARM|Windows Mobile 5.0 Pocket PC SDK (ARMV4I).ActiveCfg = Release_SSE|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAD}.Release|Win32.ActiveCfg = Release|Win32
  		{961B8359-1393-4EF7-B8E0-67B6FE1C6DAD}.Release|Win32.Build.0 = Release|Win32
@@ -467,7 +471,7 @@ diff -Nur speex-1.2.0/win32/VS2008/libspeex.sln speex-1.2.0-msbuild/win32/VS2008
  		HideSolutionNode = FALSE
 diff -Nur speex-1.2.0/win32/VS2008/speexdec/speexdec.vcproj speex-1.2.0-msbuild/win32/VS2008/speexdec/speexdec.vcproj
 --- speex-1.2.0/win32/VS2008/speexdec/speexdec.vcproj	2015-07-06 08:02:13.000000000 -0700
-+++ speex-1.2.0-msbuild/win32/VS2008/speexdec/speexdec.vcproj	2018-12-06 04:01:09.711632854 -0800
++++ speex-1.2.0-msbuild/win32/VS2008/speexdec/speexdec.vcproj	2018-12-06 05:29:44.572846943 -0800
 @@ -12,6 +12,9 @@
  		<Platform
  			Name="Win32"
@@ -478,7 +482,16 @@ diff -Nur speex-1.2.0/win32/VS2008/speexdec/speexdec.vcproj speex-1.2.0-msbuild/
  	</Platforms>
  	<ToolFiles>
  	</ToolFiles>
-@@ -97,10 +100,177 @@
+@@ -68,7 +71,7 @@
+ 				OutputFile="$(OutDir)/speexdec.exe"
+ 				LinkIncremental="2"
+ 				GenerateDebugInformation="true"
+-				ProgramDatabaseFile="$(OutDir)/speexenc.pdb"
++				ProgramDatabaseFile="$(OutDir)/speexdec.pdb"
+ 				SubSystem="1"
+ 				RandomizedBaseAddress="1"
+ 				DataExecutionPrevention="0"
+@@ -97,6 +100,86 @@
  			/>
  		</Configuration>
  		<Configuration
@@ -533,11 +546,11 @@ diff -Nur speex-1.2.0/win32/VS2008/speexdec/speexdec.vcproj speex-1.2.0-msbuild/
 +				OutputFile="$(OutDir)/speexdec.exe"
 +				LinkIncremental="2"
 +				GenerateDebugInformation="true"
-+				ProgramDatabaseFile="$(OutDir)/speexenc.pdb"
++				ProgramDatabaseFile="$(OutDir)/speexdec.pdb"
 +				SubSystem="1"
 +				RandomizedBaseAddress="1"
 +				DataExecutionPrevention="0"
-+				TargetMachine="1"
++				TargetMachine="2"
 +			/>
 +			<Tool
 +				Name="VCALinkTool"
@@ -565,7 +578,35 @@ diff -Nur speex-1.2.0/win32/VS2008/speexdec/speexdec.vcproj speex-1.2.0-msbuild/
  			Name="Release|Win32"
  			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
  			IntermediateDirectory="Release"
- 			ConfigurationType="1"
+@@ -163,6 +246,93 @@
+ 			/>
+ 			<Tool
+ 				Name="VCALinkTool"
++			/>
++			<Tool
++				Name="VCManifestTool"
++			/>
++			<Tool
++				Name="VCXDCMakeTool"
++			/>
++			<Tool
++				Name="VCBscMakeTool"
++			/>
++			<Tool
++				Name="VCFxCopTool"
++			/>
++			<Tool
++				Name="VCAppVerifierTool"
++			/>
++			<Tool
++				Name="VCPostBuildEventTool"
++			/>
++		</Configuration>
++		<Configuration
++			Name="Release|x64"
++			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
++			IntermediateDirectory="Release"
++			ConfigurationType="1"
 +			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 +			CharacterSet="2"
 +			WholeProgramOptimization="1"
@@ -624,41 +665,16 @@ diff -Nur speex-1.2.0/win32/VS2008/speexdec/speexdec.vcproj speex-1.2.0-msbuild/
 +				OptimizeForWindows98="1"
 +				RandomizedBaseAddress="1"
 +				DataExecutionPrevention="0"
-+				TargetMachine="1"
++				TargetMachine="2"
 +			/>
 +			<Tool
 +				Name="VCALinkTool"
-+			/>
-+			<Tool
-+				Name="VCManifestTool"
-+			/>
-+			<Tool
-+				Name="VCXDCMakeTool"
-+			/>
-+			<Tool
-+				Name="VCBscMakeTool"
-+			/>
-+			<Tool
-+				Name="VCFxCopTool"
-+			/>
-+			<Tool
-+				Name="VCAppVerifierTool"
-+			/>
-+			<Tool
-+				Name="VCPostBuildEventTool"
-+			/>
-+		</Configuration>
-+		<Configuration
-+			Name="Release|x64"
-+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-+			IntermediateDirectory="Release"
-+			ConfigurationType="1"
- 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
- 			CharacterSet="2"
- 			WholeProgramOptimization="1"
+ 			/>
+ 			<Tool
+ 				Name="VCManifestTool"
 diff -Nur speex-1.2.0/win32/VS2008/speexenc/speexenc.vcproj speex-1.2.0-msbuild/win32/VS2008/speexenc/speexenc.vcproj
 --- speex-1.2.0/win32/VS2008/speexenc/speexenc.vcproj	2015-07-06 08:02:13.000000000 -0700
-+++ speex-1.2.0-msbuild/win32/VS2008/speexenc/speexenc.vcproj	2018-12-06 03:59:01.821772593 -0800
++++ speex-1.2.0-msbuild/win32/VS2008/speexenc/speexenc.vcproj	2018-12-06 05:31:53.981719825 -0800
 @@ -12,6 +12,9 @@
  		<Platform
  			Name="Win32"
@@ -669,7 +685,7 @@ diff -Nur speex-1.2.0/win32/VS2008/speexenc/speexenc.vcproj speex-1.2.0-msbuild/
  	</Platforms>
  	<ToolFiles>
  	</ToolFiles>
-@@ -97,10 +100,177 @@
+@@ -97,6 +100,86 @@
  			/>
  		</Configuration>
  		<Configuration
@@ -728,7 +744,7 @@ diff -Nur speex-1.2.0/win32/VS2008/speexenc/speexenc.vcproj speex-1.2.0-msbuild/
 +				SubSystem="1"
 +				RandomizedBaseAddress="1"
 +				DataExecutionPrevention="0"
-+				TargetMachine="1"
++				TargetMachine="2"
 +			/>
 +			<Tool
 +				Name="VCALinkTool"
@@ -756,7 +772,35 @@ diff -Nur speex-1.2.0/win32/VS2008/speexenc/speexenc.vcproj speex-1.2.0-msbuild/
  			Name="Release|Win32"
  			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
  			IntermediateDirectory="Release"
- 			ConfigurationType="1"
+@@ -163,6 +246,93 @@
+ 			/>
+ 			<Tool
+ 				Name="VCALinkTool"
++			/>
++			<Tool
++				Name="VCManifestTool"
++			/>
++			<Tool
++				Name="VCXDCMakeTool"
++			/>
++			<Tool
++				Name="VCBscMakeTool"
++			/>
++			<Tool
++				Name="VCFxCopTool"
++			/>
++			<Tool
++				Name="VCAppVerifierTool"
++			/>
++			<Tool
++				Name="VCPostBuildEventTool"
++			/>
++		</Configuration>
++		<Configuration
++			Name="Release|x64"
++			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
++			IntermediateDirectory="Release"
++			ConfigurationType="1"
 +			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 +			CharacterSet="2"
 +			WholeProgramOptimization="1"
@@ -815,41 +859,16 @@ diff -Nur speex-1.2.0/win32/VS2008/speexenc/speexenc.vcproj speex-1.2.0-msbuild/
 +				OptimizeForWindows98="1"
 +				RandomizedBaseAddress="1"
 +				DataExecutionPrevention="0"
-+				TargetMachine="1"
++				TargetMachine="2"
 +			/>
 +			<Tool
 +				Name="VCALinkTool"
-+			/>
-+			<Tool
-+				Name="VCManifestTool"
-+			/>
-+			<Tool
-+				Name="VCXDCMakeTool"
-+			/>
-+			<Tool
-+				Name="VCBscMakeTool"
-+			/>
-+			<Tool
-+				Name="VCFxCopTool"
-+			/>
-+			<Tool
-+				Name="VCAppVerifierTool"
-+			/>
-+			<Tool
-+				Name="VCPostBuildEventTool"
-+			/>
-+		</Configuration>
-+		<Configuration
-+			Name="Release|x64"
-+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-+			IntermediateDirectory="Release"
-+			ConfigurationType="1"
- 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
- 			CharacterSet="2"
- 			WholeProgramOptimization="1"
+ 			/>
+ 			<Tool
+ 				Name="VCManifestTool"
 diff -Nur speex-1.2.0/win32/VS2008/tests/testenc_uwb.vcproj speex-1.2.0-msbuild/win32/VS2008/tests/testenc_uwb.vcproj
 --- speex-1.2.0/win32/VS2008/tests/testenc_uwb.vcproj	2015-07-06 08:02:13.000000000 -0700
-+++ speex-1.2.0-msbuild/win32/VS2008/tests/testenc_uwb.vcproj	2018-12-06 04:04:43.528227549 -0800
++++ speex-1.2.0-msbuild/win32/VS2008/tests/testenc_uwb.vcproj	2018-12-06 06:30:11.230369843 -0800
 @@ -11,6 +11,9 @@
  		<Platform
  			Name="Win32"
@@ -860,13 +879,22 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc_uwb.vcproj speex-1.2.0-msbuild/
  	</Platforms>
  	<ToolFiles>
  	</ToolFiles>
-@@ -97,10 +100,179 @@
+@@ -68,7 +71,7 @@
+ 				LinkIncremental="2"
+ 				AdditionalLibraryDirectories=""
+ 				GenerateDebugInformation="true"
+-				ProgramDatabaseFile="$(OutDir)/speexenc.pdb"
++				ProgramDatabaseFile="$(OutDir)/testenc_uwb.pdb"
+ 				SubSystem="1"
+ 				RandomizedBaseAddress="1"
+ 				DataExecutionPrevention="0"
+@@ -97,6 +100,87 @@
  			/>
  		</Configuration>
  		<Configuration
 +			Name="Debug|x64"
-+			OutputDirectory="Debug"
-+			IntermediateDirectory="Debug"
++			OutputDirectory="Debug/testenc_uwb"
++			IntermediateDirectory="Debug/testenc_uwb"
 +			ConfigurationType="1"
 +			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 +			CharacterSet="2"
@@ -916,11 +944,11 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc_uwb.vcproj speex-1.2.0-msbuild/
 +				LinkIncremental="2"
 +				AdditionalLibraryDirectories=""
 +				GenerateDebugInformation="true"
-+				ProgramDatabaseFile="$(OutDir)/speexenc.pdb"
++				ProgramDatabaseFile="$(OutDir)/testenc_uwb.pdb"
 +				SubSystem="1"
 +				RandomizedBaseAddress="1"
 +				DataExecutionPrevention="0"
-+				TargetMachine="1"
++				TargetMachine="2"
 +			/>
 +			<Tool
 +				Name="VCALinkTool"
@@ -948,7 +976,35 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc_uwb.vcproj speex-1.2.0-msbuild/
  			Name="Release|Win32"
  			OutputDirectory="Release"
  			IntermediateDirectory="Release"
- 			ConfigurationType="1"
+@@ -164,6 +248,94 @@
+ 			/>
+ 			<Tool
+ 				Name="VCALinkTool"
++			/>
++			<Tool
++				Name="VCManifestTool"
++			/>
++			<Tool
++				Name="VCXDCMakeTool"
++			/>
++			<Tool
++				Name="VCBscMakeTool"
++			/>
++			<Tool
++				Name="VCFxCopTool"
++			/>
++			<Tool
++				Name="VCAppVerifierTool"
++			/>
++			<Tool
++				Name="VCPostBuildEventTool"
++			/>
++		</Configuration>
++		<Configuration
++			Name="Release|x64"
++			OutputDirectory="Release/testenc_uwb"
++			IntermediateDirectory="Release/testenc_uwb"
++			ConfigurationType="1"
 +			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 +			CharacterSet="2"
 +			WholeProgramOptimization="1"
@@ -1008,41 +1064,16 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc_uwb.vcproj speex-1.2.0-msbuild/
 +				OptimizeForWindows98="1"
 +				RandomizedBaseAddress="1"
 +				DataExecutionPrevention="0"
-+				TargetMachine="1"
++				TargetMachine="2"
 +			/>
 +			<Tool
 +				Name="VCALinkTool"
-+			/>
-+			<Tool
-+				Name="VCManifestTool"
-+			/>
-+			<Tool
-+				Name="VCXDCMakeTool"
-+			/>
-+			<Tool
-+				Name="VCBscMakeTool"
-+			/>
-+			<Tool
-+				Name="VCFxCopTool"
-+			/>
-+			<Tool
-+				Name="VCAppVerifierTool"
-+			/>
-+			<Tool
-+				Name="VCPostBuildEventTool"
-+			/>
-+		</Configuration>
-+		<Configuration
-+			Name="Release|x64"
-+			OutputDirectory="Release"
-+			IntermediateDirectory="Release"
-+			ConfigurationType="1"
- 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
- 			CharacterSet="2"
- 			WholeProgramOptimization="1"
+ 			/>
+ 			<Tool
+ 				Name="VCManifestTool"
 diff -Nur speex-1.2.0/win32/VS2008/tests/testenc.vcproj speex-1.2.0-msbuild/win32/VS2008/tests/testenc.vcproj
 --- speex-1.2.0/win32/VS2008/tests/testenc.vcproj	2015-07-06 08:02:13.000000000 -0700
-+++ speex-1.2.0-msbuild/win32/VS2008/tests/testenc.vcproj	2018-12-06 04:06:18.291674927 -0800
++++ speex-1.2.0-msbuild/win32/VS2008/tests/testenc.vcproj	2018-12-06 06:30:41.618970751 -0800
 @@ -11,6 +11,9 @@
  		<Platform
  			Name="Win32"
@@ -1053,13 +1084,22 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc.vcproj speex-1.2.0-msbuild/win3
  	</Platforms>
  	<ToolFiles>
  	</ToolFiles>
-@@ -97,10 +100,179 @@
+@@ -68,7 +71,7 @@
+ 				LinkIncremental="2"
+ 				AdditionalLibraryDirectories=""
+ 				GenerateDebugInformation="true"
+-				ProgramDatabaseFile="$(OutDir)/speexenc.pdb"
++				ProgramDatabaseFile="$(OutDir)/testenc.pdb"
+ 				SubSystem="1"
+ 				RandomizedBaseAddress="1"
+ 				DataExecutionPrevention="0"
+@@ -97,6 +100,87 @@
  			/>
  		</Configuration>
  		<Configuration
 +			Name="Debug|x64"
-+			OutputDirectory="Debug"
-+			IntermediateDirectory="Debug"
++			OutputDirectory="Debug\testenc"
++			IntermediateDirectory="Debug\testenc"
 +			ConfigurationType="1"
 +			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 +			CharacterSet="2"
@@ -1109,11 +1149,11 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc.vcproj speex-1.2.0-msbuild/win3
 +				LinkIncremental="2"
 +				AdditionalLibraryDirectories=""
 +				GenerateDebugInformation="true"
-+				ProgramDatabaseFile="$(OutDir)/speexenc.pdb"
++				ProgramDatabaseFile="$(OutDir)/testenc.pdb"
 +				SubSystem="1"
 +				RandomizedBaseAddress="1"
 +				DataExecutionPrevention="0"
-+				TargetMachine="1"
++				TargetMachine="2"
 +			/>
 +			<Tool
 +				Name="VCALinkTool"
@@ -1141,7 +1181,35 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc.vcproj speex-1.2.0-msbuild/win3
  			Name="Release|Win32"
  			OutputDirectory="Release"
  			IntermediateDirectory="Release"
- 			ConfigurationType="1"
+@@ -164,6 +248,94 @@
+ 			/>
+ 			<Tool
+ 				Name="VCALinkTool"
++			/>
++			<Tool
++				Name="VCManifestTool"
++			/>
++			<Tool
++				Name="VCXDCMakeTool"
++			/>
++			<Tool
++				Name="VCBscMakeTool"
++			/>
++			<Tool
++				Name="VCFxCopTool"
++			/>
++			<Tool
++				Name="VCAppVerifierTool"
++			/>
++			<Tool
++				Name="VCPostBuildEventTool"
++			/>
++		</Configuration>
++		<Configuration
++			Name="Release|x64"
++			OutputDirectory="Release\testenc"
++			IntermediateDirectory="Release\testenc"
++			ConfigurationType="1"
 +			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 +			CharacterSet="2"
 +			WholeProgramOptimization="1"
@@ -1201,41 +1269,16 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc.vcproj speex-1.2.0-msbuild/win3
 +				OptimizeForWindows98="1"
 +				RandomizedBaseAddress="1"
 +				DataExecutionPrevention="0"
-+				TargetMachine="1"
++				TargetMachine="2"
 +			/>
 +			<Tool
 +				Name="VCALinkTool"
-+			/>
-+			<Tool
-+				Name="VCManifestTool"
-+			/>
-+			<Tool
-+				Name="VCXDCMakeTool"
-+			/>
-+			<Tool
-+				Name="VCBscMakeTool"
-+			/>
-+			<Tool
-+				Name="VCFxCopTool"
-+			/>
-+			<Tool
-+				Name="VCAppVerifierTool"
-+			/>
-+			<Tool
-+				Name="VCPostBuildEventTool"
-+			/>
-+		</Configuration>
-+		<Configuration
-+			Name="Release|x64"
-+			OutputDirectory="Release"
-+			IntermediateDirectory="Release"
-+			ConfigurationType="1"
- 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
- 			CharacterSet="2"
- 			WholeProgramOptimization="1"
+ 			/>
+ 			<Tool
+ 				Name="VCManifestTool"
 diff -Nur speex-1.2.0/win32/VS2008/tests/testenc_wb.vcproj speex-1.2.0-msbuild/win32/VS2008/tests/testenc_wb.vcproj
 --- speex-1.2.0/win32/VS2008/tests/testenc_wb.vcproj	2015-07-06 08:02:13.000000000 -0700
-+++ speex-1.2.0-msbuild/win32/VS2008/tests/testenc_wb.vcproj	2018-12-06 04:07:38.222449341 -0800
++++ speex-1.2.0-msbuild/win32/VS2008/tests/testenc_wb.vcproj	2018-12-06 06:31:19.639726004 -0800
 @@ -11,6 +11,9 @@
  		<Platform
  			Name="Win32"
@@ -1246,13 +1289,22 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc_wb.vcproj speex-1.2.0-msbuild/w
  	</Platforms>
  	<ToolFiles>
  	</ToolFiles>
-@@ -97,10 +100,179 @@
+@@ -68,7 +71,7 @@
+ 				LinkIncremental="2"
+ 				AdditionalLibraryDirectories=""
+ 				GenerateDebugInformation="true"
+-				ProgramDatabaseFile="$(OutDir)/speexenc.pdb"
++				ProgramDatabaseFile="$(OutDir)/testenc_wb.pdb"
+ 				SubSystem="1"
+ 				RandomizedBaseAddress="1"
+ 				DataExecutionPrevention="0"
+@@ -97,6 +100,87 @@
  			/>
  		</Configuration>
  		<Configuration
 +			Name="Debug|x64"
-+			OutputDirectory="Debug"
-+			IntermediateDirectory="Debug"
++			OutputDirectory="Debug\testenc_wb"
++			IntermediateDirectory="Debug\testenc_wb"
 +			ConfigurationType="1"
 +			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 +			CharacterSet="2"
@@ -1302,11 +1354,11 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc_wb.vcproj speex-1.2.0-msbuild/w
 +				LinkIncremental="2"
 +				AdditionalLibraryDirectories=""
 +				GenerateDebugInformation="true"
-+				ProgramDatabaseFile="$(OutDir)/speexenc.pdb"
++				ProgramDatabaseFile="$(OutDir)/testenc_wb.pdb"
 +				SubSystem="1"
 +				RandomizedBaseAddress="1"
 +				DataExecutionPrevention="0"
-+				TargetMachine="1"
++				TargetMachine="2"
 +			/>
 +			<Tool
 +				Name="VCALinkTool"
@@ -1334,7 +1386,35 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc_wb.vcproj speex-1.2.0-msbuild/w
  			Name="Release|Win32"
  			OutputDirectory="Release"
  			IntermediateDirectory="Release"
- 			ConfigurationType="1"
+@@ -164,6 +248,94 @@
+ 			/>
+ 			<Tool
+ 				Name="VCALinkTool"
++			/>
++			<Tool
++				Name="VCManifestTool"
++			/>
++			<Tool
++				Name="VCXDCMakeTool"
++			/>
++			<Tool
++				Name="VCBscMakeTool"
++			/>
++			<Tool
++				Name="VCFxCopTool"
++			/>
++			<Tool
++				Name="VCAppVerifierTool"
++			/>
++			<Tool
++				Name="VCPostBuildEventTool"
++			/>
++		</Configuration>
++		<Configuration
++			Name="Release|x64"
++			OutputDirectory="Release\testenc_wb"
++			IntermediateDirectory="Release\testenc_wb"
++			ConfigurationType="1"
 +			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 +			CharacterSet="2"
 +			WholeProgramOptimization="1"
@@ -1394,35 +1474,10 @@ diff -Nur speex-1.2.0/win32/VS2008/tests/testenc_wb.vcproj speex-1.2.0-msbuild/w
 +				OptimizeForWindows98="1"
 +				RandomizedBaseAddress="1"
 +				DataExecutionPrevention="0"
-+				TargetMachine="1"
++				TargetMachine="2"
 +			/>
 +			<Tool
 +				Name="VCALinkTool"
-+			/>
-+			<Tool
-+				Name="VCManifestTool"
-+			/>
-+			<Tool
-+				Name="VCXDCMakeTool"
-+			/>
-+			<Tool
-+				Name="VCBscMakeTool"
-+			/>
-+			<Tool
-+				Name="VCFxCopTool"
-+			/>
-+			<Tool
-+				Name="VCAppVerifierTool"
-+			/>
-+			<Tool
-+				Name="VCPostBuildEventTool"
-+			/>
-+		</Configuration>
-+		<Configuration
-+			Name="Release|x64"
-+			OutputDirectory="Release"
-+			IntermediateDirectory="Release"
-+			ConfigurationType="1"
- 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
- 			CharacterSet="2"
- 			WholeProgramOptimization="1"
+ 			/>
+ 			<Tool
+ 				Name="VCManifestTool"
