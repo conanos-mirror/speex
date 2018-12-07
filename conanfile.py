@@ -1,6 +1,6 @@
 from conans import ConanFile, tools, AutoToolsBuildEnvironment, MSBuild
 from conanos.build import config_scheme
-from shutil import copyfile
+import shutil
 import os
 
 class SpeexConan(ConanFile):
@@ -64,6 +64,37 @@ class SpeexConan(ConanFile):
         if tools.os_info.is_linux:
             with tools.chdir(self._source_subfolder):
                 self.copy("*", src="%s/builddir"%(os.getcwd()))
+
+        if self.settings.os == 'Windows':
+            self.copy("*.h", dst=os.path.join(self.package_folder,"include","speex"), src=os.path.join(self.build_folder,self._source_subfolder,"include","speex"),keep_path=False)
+            self.copy("*.exe", dst=os.path.join(self.package_folder,"bin"), src=os.path.join(self.build_folder,self._source_subfolder,"bin"),keep_path=False)
+            self.copy("*.exe", dst=os.path.join(self.package_folder,"bin"), src=os.path.join(self.build_folder,self._source_subfolder,"win32", "VS2008",str(self.settings.build_type)))
+            self.copy("*.lib", dst=os.path.join(self.package_folder,"lib"), src=os.path.join(self.build_folder,self._source_subfolder,"win32", "VS2008",str(self.settings.build_type)))
+
+            shutil.copyfile(os.path.join(self.build_folder,self._source_subfolder,"include","speex","speex_config_types.h.in"),
+                            os.path.join(self.package_folder,"include","speex", "speex_config_types.h"))
+            replacements = {
+                "@INCLUDE_STDINT@"    :    "#include <stdint.h>",
+                "@SIZE16@"            :    "int16_t",
+                "@USIZE16@"           :    "uint16_t",
+                "@SIZE32@"            :    "int32_t",
+                "@USIZE32@"           :    "uint32_t",
+            }
+            for s, r in replacements.items():
+                tools.replace_in_file(os.path.join(self.package_folder,"include","speex", "speex_config_types.h"),s,r)
+            tools.mkdir(os.path.join(self.package_folder,"lib","pkgconfig"))
+            shutil.copyfile(os.path.join(self.build_folder,self._source_subfolder,"speex.pc.in"),
+                            os.path.join(self.package_folder,"lib","pkgconfig", "speex.pc"))
+            replacements_pc = {
+                "@prefix@"      : self.package_folder,
+                "@exec_prefix@" : "${prefix}/bin",
+                "@libdir@"      : "${prefix}/lib",
+                "@includedir@"  : "${prefix}/include",
+                "@SPEEX_VERSION@" : self.version,
+                "@LIBM@"        : "-lm"
+            }
+            for s, r in replacements_pc.items():
+                tools.replace_in_file(os.path.join(self.package_folder,"lib","pkgconfig", "speex.pc"),s,r)
 
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
