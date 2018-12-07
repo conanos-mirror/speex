@@ -44,15 +44,16 @@ class SpeexConan(ConanFile):
 
     def build(self):
         if self.settings.os == 'Linux':
+            prefix = os.path.join(self.build_folder, self._source_subfolder, "install")
             with tools.chdir(self._source_subfolder):
                 autotools = AutoToolsBuildEnvironment(self)
-                _args = ["--prefix=%s/builddir"%(os.getcwd()), "--disable-maintainer-mode", "--disable-silent-rules"]
+                _args = ["--prefix=%s"%(prefix), "--disable-maintainer-mode", "--disable-silent-rules"]
                 if self.options.shared:
                     _args.extend(['--enable-shared=yes','--enable-static=no'])
                 else:
                     _args.extend(['--enable-shared=no','--enable-static=yes'])
                 autotools.configure(args=_args, pkg_config_paths='%s/lib/pkgconfig'%(self.deps_cpp_info["libogg"].rootpath))
-                autotools.make(args=["-j2"])
+                autotools.make()
                 autotools.install()
 
         if self.settings.os == 'Windows':
@@ -61,9 +62,8 @@ class SpeexConan(ConanFile):
                 msbuild.build("libspeex.sln",upgrade_project=True,platforms={'x86': 'Win32', 'x86_64': 'x64'})
 
     def package(self):
-        if tools.os_info.is_linux:
-            with tools.chdir(self._source_subfolder):
-                self.copy("*", src="%s/builddir"%(os.getcwd()))
+        if self.settings.os == 'Linux':
+            self.copy("*", dst=self.package_folder, src=os.path.join(self.build_folder,self._source_subfolder, "install"))
 
         if self.settings.os == 'Windows':
             self.copy("*.h", dst=os.path.join(self.package_folder,"include","speex"), src=os.path.join(self.build_folder,self._source_subfolder,"include","speex"),keep_path=False)
