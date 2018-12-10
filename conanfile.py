@@ -59,17 +59,20 @@ class SpeexConan(ConanFile):
         if self.settings.os == 'Windows':
             with tools.chdir(os.path.join(self._source_subfolder,"win32", "VS2008")):
                 msbuild = MSBuild(self)
-                msbuild.build("libspeex.sln",upgrade_project=True,platforms={'x86': 'Win32', 'x86_64': 'x64'})
+                build_type = str(self.settings.build_type) + ("_Dynamic" if self.options.shared else "")
+                msbuild.build("libspeex.sln",upgrade_project=True,platforms={'x86': 'Win32', 'x86_64': 'x64'}, build_type=build_type)
 
     def package(self):
         if self.settings.os == 'Linux':
             self.copy("*", dst=self.package_folder, src=os.path.join(self.build_folder,self._source_subfolder, "install"))
 
         if self.settings.os == 'Windows':
+            build_type = str(self.settings.build_type) + ("_Dynamic" if self.options.shared else "")
             self.copy("*.h", dst=os.path.join(self.package_folder,"include","speex"), src=os.path.join(self.build_folder,self._source_subfolder,"include","speex"),keep_path=False)
             self.copy("*.exe", dst=os.path.join(self.package_folder,"bin"), src=os.path.join(self.build_folder,self._source_subfolder,"bin"),keep_path=False)
             self.copy("*.exe", dst=os.path.join(self.package_folder,"bin"), src=os.path.join(self.build_folder,self._source_subfolder,"win32", "VS2008",str(self.settings.build_type)))
-            self.copy("*.lib", dst=os.path.join(self.package_folder,"lib"), src=os.path.join(self.build_folder,self._source_subfolder,"win32", "VS2008",str(self.settings.build_type)))
+            self.copy("*.lib", dst=os.path.join(self.package_folder,"lib"), src=os.path.join(self.build_folder,self._source_subfolder,"win32", "VS2008",build_type))
+            self.copy("*.dll", dst=os.path.join(self.package_folder,"bin"), src=os.path.join(self.build_folder,self._source_subfolder,"win32", "VS2008",build_type))
 
             shutil.copyfile(os.path.join(self.build_folder,self._source_subfolder,"include","speex","speex_config_types.h.in"),
                             os.path.join(self.package_folder,"include","speex", "speex_config_types.h"))
