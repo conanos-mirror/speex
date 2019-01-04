@@ -11,7 +11,7 @@ class SpeexConan(ConanFile):
     homepage = "https://www.speex.org/"
     license = "BSD_like"
     patch = "sln-subproject-and-sourcefile-not-existing.patch"
-    exports = ["COPYING", patch]
+    exports = ["COPYING", "libspeex.def", patch]
     generators = "gcc","visual_studio"
     settings = "os", "compiler", "build_type", "arch"
     options = {
@@ -41,6 +41,8 @@ class SpeexConan(ConanFile):
             tools.patch(patch_file=self.patch)
         extracted_dir = "%s-%s"%(self.name, self.version)
         os.rename(extracted_dir, self._source_subfolder)
+        if self.settings.os == 'Windows':
+            shutil.copy2(os.path.join(self.source_folder,"libspeex.def"),os.path.join(self.source_folder,self._source_subfolder,"win32","libspeex.def"))
 
     def build(self):
         if self.settings.os == 'Linux':
